@@ -45,4 +45,14 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function banks()
+    {
+        return $this->belongsToMany(Bank::class, 'users_has_banks');
+    }
+
+    public function releases()
+    {
+        return $this->hasMany(Release::class);
+    }
 }

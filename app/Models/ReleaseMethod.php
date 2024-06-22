@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Status extends Model
+class ReleaseMethod extends Model
 {
     use HasFactory;
 
     protected $fillable = ['name'];
 
-    public function schedules()
+    public function releases()
     {
-        return $this->hasMany(Schedule::class);
+        return $this->hasMany(Release::class);
     }
 }

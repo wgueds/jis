@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('release_id')->constrained();
             $table->foreignId('status_id')->constrained();
+            $table->date('payment_date')->nullable();
             $table->timestamps();
         });
     }
