@@ -5,9 +5,12 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreStatusRequest;
 use App\Http\Requests\UpdateStatusRequest;
 use App\Models\Status;
+use App\Traits\ApiResponse;
 
 class StatusController extends Controller
 {
+    use ApiResponse;
+
     /**
      * Display a listing of the resource.
      */

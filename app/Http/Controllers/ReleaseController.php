@@ -5,9 +5,12 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreReleaseRequest;
 use App\Http\Requests\UpdateReleaseRequest;
 use App\Models\Release;
+use App\Traits\ApiResponse;
 
 class ReleaseController extends Controller
 {
+    use ApiResponse;
+
     /**
      * Display a listing of the resource.
      */

@@ -5,9 +5,12 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreBankRequest;
 use App\Http\Requests\UpdateBankRequest;
 use App\Models\Bank;
+use App\Traits\ApiResponse;
 
 class BankController extends Controller
 {
+    use ApiResponse;
+    
     /**
      * Display a listing of the resource.
      */

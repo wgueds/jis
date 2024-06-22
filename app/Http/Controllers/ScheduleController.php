@@ -5,9 +5,12 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreScheduleRequest;
 use App\Http\Requests\UpdateScheduleRequest;
 use App\Models\Schedule;
+use App\Traits\ApiResponse;
 
 class ScheduleController extends Controller
 {
+    use ApiResponse;
+
     /**
      * Display a listing of the resource.
      */
