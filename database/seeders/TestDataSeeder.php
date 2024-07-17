@@ -26,7 +26,7 @@ class TestDataSeeder extends Seeder
         Status::create(['name' => 'Agendado']);
         Status::create(['name' => 'Pago']);
         Status::create(['name' => 'Atrasado']);
-        
+
         $user_1 = User::create([
             'name' => 'Wesley Guedes',
             'email' => 'wgueds@app.com',
