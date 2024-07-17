@@ -22,7 +22,7 @@ class AuthController extends Controller
             $user->password = bcrypt($request->input('password'));
             $user->save();
 
-            return $this->sucess(['success'], null, 201);
+            return $this->success(['success'], null, 201);
         } catch (Exception $e) {
             return $this->error($e->getMessage(), 500, null, $e);
         }
@@ -44,7 +44,7 @@ class AuthController extends Controller
                 $currentAccessToken->delete();
             }
 
-            return $this->sucess([
+            return $this->success([
                 'user' => $user,
                 'token' => $user->createToken("CLIENT-{$user->id}")->plainTextToken
             ]);

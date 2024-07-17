@@ -16,6 +16,10 @@ class Bank extends Model
         'enable',
     ];
 
+    protected $hidden = [
+        'updated_at'
+    ];
+
     public function users()
     {
         return $this->belongsToMany(User::class, 'users_has_banks');
