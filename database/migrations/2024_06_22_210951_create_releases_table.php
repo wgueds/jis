@@ -19,6 +19,7 @@ return new class extends Migration
             $table->enum('type', ['IN', 'OUT']);
             $table->string('title');
             $table->string('note')->nullable();
+            $table->boolean('finished')->default(0);
             $table->softDeletes();
             $table->timestamps();
         });

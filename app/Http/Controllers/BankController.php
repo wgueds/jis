@@ -45,7 +45,7 @@ class BankController extends Controller
 
             return $this->success($bank, __('Item crceated successfuly'));
         } catch (Exception $e) {
-            return $this->error(__('An error occurred while processing the action'), 500, ['error' => $e->getMessage()], $e);
+            return $this->error(__('An error occurred while processing the action'), ['error' => $e->getMessage()], $e);
         }
     }
 
@@ -73,7 +73,7 @@ class BankController extends Controller
 
             return $this->success($this->repository->find($bank->id), __('Item updated successfuly'));
         } catch (Exception $e) {
-            return $this->error(__('An error occurred while processing the action'), 500, ['error' => $e->getMessage()], $e);
+            return $this->error(__('An error occurred while processing the action'), ['error' => $e->getMessage()], $e);
         }
     }
 
@@ -86,7 +86,7 @@ class BankController extends Controller
             $this->repository->delete($bank->id);
             return $this->success([__('Item removed successfuly')]);
         } catch (Exception $e) {
-            return $this->error(__('An error occurred while processing the action'), 500, ['error' => $e->getMessage()], $e);
+            return $this->error(__('An error occurred while processing the action'), ['error' => $e->getMessage()], $e);
         }
     }
 }

@@ -32,12 +32,12 @@ trait ApiResponse
      * @param  array|string|null $data
      * @return \Illuminate\Http\JsonResponse
      */
-    protected function error($message = null, int $code = 500, $data = null, Exception $exception = null)
+    protected function error($message = null, $data = null, Exception $exception = null)
     {
         if ($exception)
             Log::error("{$exception->getMessage()} in {$exception->getFile()}:{$exception->getLine()}");
 
-        if ($code === 422) {
+        if ($exception->getCode() === 422) {
             return response()->json([
                 'success' => false,
                 'message' => 'Validation errors',
@@ -49,6 +49,6 @@ trait ApiResponse
             'success' => false,
             'message' => $message,
             'data' => $data
-        ], $code);
+        ], $exception->getCode() > 0 ? $exception->getCode() : 500);
     }
 }
